@@ -1,5 +1,10 @@
 'use strict';
 
+/**
+ * Router for Protected Routes
+ * @module routerSecret Routes protected by bearerAuth and permissions
+ * Routes from '/'
+ */
 const express = require('express');
 const routerSecret = express.Router();
 

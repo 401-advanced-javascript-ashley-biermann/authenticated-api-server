@@ -2,7 +2,10 @@
 
 /**
  * User Schema
- * @module userSchema
+ * @module userSchema mongoose.model
+ * @param {string} username Name of user
+ * @param {string} password User's password
+ * @param {string} role Role of user: user, write, editor, admin
  */
 
 const mongoose = require('mongoose');

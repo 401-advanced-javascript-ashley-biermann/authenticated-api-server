@@ -2,10 +2,9 @@
 
 /**
  * Mongo Interface
- * @module mongo
+ * @module MongoInterface
+ * @class MongoInterface - contains Mongo's equivalent of CRUD functions
  */
-
- // contains Mongo's equivalent of CRUD functions
 
 class MongoInterface {
   constructor(schema) {
@@ -16,7 +15,7 @@ class MongoInterface {
     let newEntry = new this.schema(data);
     return newEntry.save();
   }
-  
+
   exists(data) {
     return this.schema.exists(data);
   }

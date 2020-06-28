@@ -2,7 +2,7 @@
 
 /**
  * User Class
- * @module users-model
+ * @module User Extends MongoInterface, Provides additional User-specific methods
  */
 
 require('dotenv').config();
@@ -60,9 +60,12 @@ class User extends Model {
       return Promise.reject('jwt Invalid - at validateToken');
     }
   }
-
+/**
+ * @function can Checks if the user can do the thing they want to do
+ * @param {string} permission 
+ * @returns {boolean} True - If their role matches the capability they want, go for it!
+ */
   can(permission) {
-    //check if the user can do the thing they want to do. If their role matches the capability they want, go for it!
     return allRoles[this.role].includes(permission);
   }  
 }

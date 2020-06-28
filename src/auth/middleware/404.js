@@ -3,6 +3,8 @@
 /**
  * 404 Error Handler
  * @module 404
+ * @param {req} request
+ * @returns {string} Error Cannot 'method' 'path'
  */
 
 module.exports = (req, res) => {

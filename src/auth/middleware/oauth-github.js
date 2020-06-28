@@ -1,7 +1,12 @@
 'use strict';
 
+/**
+ * OAuth Github module
+ * @module oauth-github
+ */
+
 const superagent = require('superagent');
-const users = require('../models/users-model');
+const users = require('../models/users-model'); // FIXME: Is this going to the right place? Should it reference the db?
 
 /*
   Resources
@@ -14,6 +19,10 @@ const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const API_SERVER = process.env.API_SERVER;
 
+/**
+ * @function authorize Uses Github OAuth to authorize a user
+ * @next Passes through middleware
+ */
 module.exports = async function authorize(req, res, next) {
 
   try {
@@ -23,7 +32,7 @@ module.exports = async function authorize(req, res, next) {
     let remoteToken = await exchangeCodeForToken(code);
     console.log('(2) ACCESS TOKEN:', remoteToken)
 
-    //FIXME: gets to this point, but doesn't receive anything back in .body, and can't .save()... maybe try create
+    //FIXME: gets to this point, but doesn't receive anything back in .body, and can't .save(), and doesn't seem to recognize any of the user.function functions. Maybe it's not actually a user it's getting? 
     let remoteUser = await getRemoteUserInfo(remoteToken);
     console.log('(3) GITHUB USER', remoteUser)
 

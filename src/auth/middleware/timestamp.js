@@ -3,7 +3,9 @@
 
 /**
  * Timestamp Middleware
- * @module timestamp
+ * @module timeStamp 
+ * @function timeStamp Provides timeStamp for logger module
+ * @next
  */
 
 const timeStamp = function (req, res, next) {

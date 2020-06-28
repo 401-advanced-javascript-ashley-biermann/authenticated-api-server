@@ -7,8 +7,11 @@
  const UserModel = require('../models/users-model');
  const User = new UserModel();
 
-// function that takes in info and immediately passing it to another function
-// function currying - fat arrow
+/**
+ * Curried function - middleware - checks for permission to access a route based on user's role
+ * @param {string} capability The type of permission necessary to pass the middleware requirement
+ * @next Passes through if user has role which allows for the requested capability
+ */
 
 const permissions = (capability) => async(req, res, next) => {
   // console.log(`from permission mw - req.user.username ${req.user.username}`);

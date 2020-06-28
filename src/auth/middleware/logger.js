@@ -2,7 +2,7 @@
 
 /**
  * Logger Middleware
- * @module logger
+ * @module logger - Adds timestamp, path, and method to requests
  */
 
 module.exports = (req, res, next) => {

@@ -1,10 +1,10 @@
 'use strict';
 
 /** ACL Roles
- * @module acl
+ * @module acl role: capabilities
  */
 
-// role: ['capability', 'permission']
+// role: ['capability' or 'permission']
 module.exports = {
   user: ['read'],
   write: ['read', 'create'],

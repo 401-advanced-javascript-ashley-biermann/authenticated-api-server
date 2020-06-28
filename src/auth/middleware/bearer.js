@@ -7,6 +7,11 @@
 
 const users = require('../models/users-model');
 
+/**
+ * @function bearer Checks for bearer authentication
+ * @next User is valid
+ * @status 401 - User not valid
+ */
 async function bearer (req, res, next) {
   // check auth headers
   if(!req.headers.authorization) {

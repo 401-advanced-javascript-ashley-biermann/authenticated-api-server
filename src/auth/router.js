@@ -2,7 +2,7 @@
 
 /**
  * Router
- * @module router
+ * @module router Routes from '/'
  */
 
 // DEPENDENCIES
