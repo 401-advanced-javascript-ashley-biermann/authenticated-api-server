@@ -1,7 +1,7 @@
 'use strict';
 
 /**Bearer Auth middleware Test
- * @module bearer-auth-test
+ * @module bearer-auth.test
  */
 
 require('dotenv').config();
