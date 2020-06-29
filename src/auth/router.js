@@ -12,7 +12,7 @@ const cors = require('cors');
 // PREPARE THE ROUTER
 const router = express.Router();
 
-// APP LEVEL MW
+// ROUTER LEVEL MW
 router.use(cors());
 
 // ROUTE MIDDLEWARE
@@ -22,7 +22,7 @@ const bearerAuth = require('./middleware/bearer');
 const acl = require('./middleware/acl');
 
 // WEBSITE FILES //OAUTH
-router.use(express.static('./public')); //OAUTH
+// router.use(express.static('./public')); //OAUTH
 
 // MODELS
 const UserModel = require('./models/users-model');

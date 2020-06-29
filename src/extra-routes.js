@@ -28,6 +28,10 @@ routerSecret.put('/change', bearerAuth, permissions('update'),(req, res) => {
   res.send('Route PUT /change - permission granted');
 });
 
+// routerSecret.patch('/patch', bearerAuth, permissions('update'),(req, res) => {
+//   res.send('Route PATCH /patch - permission granted');
+// });
+
 routerSecret.delete('/remove', bearerAuth, permissions('delete'),(req, res) => {
   res.send('Route DELETE /remove - permission granted');
 });

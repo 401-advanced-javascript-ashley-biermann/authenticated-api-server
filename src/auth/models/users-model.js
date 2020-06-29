@@ -48,7 +48,7 @@ class User extends Model {
 
   static generateToken(username) {
     // console.log(username);
-    let token = jwt.sign(username, SECRET, { expiresIn: '10h'});
+    let token = jwt.sign(username, SECRET, { expiresIn: '24h'});
     return token;
   }
 

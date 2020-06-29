@@ -5,25 +5,28 @@
  * @module basic auth
  */
 
-const basicAuth = require('../src/auth/middleware/basic');
+require('dotenv').config();
+const supergoose = require('cf-supergoose');
+const server = require('../src/server');
+// const basicAuth = require('../src/auth/middleware/basic');
 
-const req = 'username password';
-const res = {status: jest.fn().mockImplementation(() => {
-  return {send: jest.fn()}
-})};
-const next = jest.fn();
-const consoleSpy = jest.spyOn(console, 'log');
+const mockRequest = supergoose.server(server.server);
 
-describe('Testing basic auth middleware', () => {
-  it('', () => {
-    basicAuth(req, res, next);
-    expect(consoleSpy).toBe('');
-    expect(next).toHaveBeenCalledWith();
-  });
-  
-  // it('', () => {
-  //   basicAuth(req, res, next);
-  //   expect(consoleSpy).toHaveBeenCalledWith();
-  //   expect(next).not.toHaveBeenCalledWith('Invalid login');
-  // });
-});
+const consoleSpy = jest.spyOn(global.console, 'log');
+
+beforeAll(() => {
+  supergoose.startDB();
+})
+afterAll(() => {
+  supergoose.stopDB();
+})
+
+// describe('Testing basic auth middleware', () => {
+//   it('Should', (done) => {
+//     let user1 = { username: 'testUser1', password: 'test', role: 'admin' };
+//     mockRequest.post('/signup').send(user1)
+
+//     expect(consoleSpy).toBe('');
+//     expect(next).toHaveBeenCalledWith();
+//   });
+// });
