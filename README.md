@@ -8,7 +8,8 @@
 
 - [submission PR](https://github.com/401-advanced-javascript-ashley-biermann/authenticated-api-server/pull/1)
 - [ci/cd](https://github.com/401-advanced-javascript-ashley-biermann/notes/tree/master/.github/workflows) (GitHub Actions)
-- [front-end server url]() (when applicable)
+- [back-end server url](https://biermann-auth-api.herokuapp.com/) (when applicable)
+- [jsdoc](/docs/index.html)
 
 ### Setup
 
